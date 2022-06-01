@@ -66,7 +66,7 @@ user = {'bmi': 23.78,
  'asthma': "no",
  'kidneydisease': "no",
  'skincancer': "no"}
- 
+
 event = {"user":user}
 
 url = 'http://localhost:8080/2015-03-31/functions/function/invocations'
@@ -115,7 +115,7 @@ docker push $REMOTE_URI
 
 ## Create AWS Lambda function
 
-![Alt text](/media/manuel/storage/Courses/ml-zoomcamp/course-zoomcamp/09-serverless/homework/own/images/lambda.png "a title")
+![Alt text](images/lambda.png "a title")
 
 Be sure to edit it's preferences and add more memory and time for your Lambda function to execute.
 
@@ -123,11 +123,11 @@ Be sure to edit it's preferences and add more memory and time for your Lambda fu
 
 Go to AWS Console and create a REST API with a resource named `predict`. Be sure to select CORS.
 
-![Alt text](/media/manuel/storage/Courses/ml-zoomcamp/course-zoomcamp/09-serverless/homework/own/images/api-gateway-resources.png "a title")
+![Alt text](images/api-gateway-resources.png "a title")
 
 Make a POST method with your previously created lambda function
 
-![Alt text](/media/manuel/storage/Courses/ml-zoomcamp/course-zoomcamp/09-serverless/homework/own/images/api-gateway-post.png "a title")
+![Alt text](images/api-gateway-post.png "a title")
 
 Deploy your API and give it a stage name, i.e. `production`.
 
@@ -143,15 +143,15 @@ where you can make your API calls .
 
 To protect you deployment from undisired requests, you can add an API Key to your service. To do so you first need to add an **Api Key Required** parameter to your POST method.
 
-![Alt text](/media/manuel/storage/Courses/ml-zoomcamp/course-zoomcamp/09-serverless/homework/own/images/api-key.png "a title")
+![Alt text](images/api-key.png "a title")
 
 Then go to API Keys on the left panel and on Actions select Create API key and give a name to your API key.
 
-![Alt text](/media/manuel/storage/Courses/ml-zoomcamp/course-zoomcamp/09-serverless/homework/own/images/api-key-create.png "a title")
+![Alt text](images/api-key-create.png "a title")
 
 Now go to Usage Plans on the left panel and create a usage plan. Set a Throttling and Quota that you prefer.
 
-![Alt text](/media/manuel/storage/Courses/ml-zoomcamp/course-zoomcamp/09-serverless/homework/own/images/usage_plan.png "a title")
+![Alt text](images/usage_plan.png "a title")
 
 And then associate your Usage Plan with your API Key.
 
@@ -171,5 +171,3 @@ result = requests.post(url, json={'url': data}, headers=headers).json()
 ```
 
 **It is a good idea to store your API Key separately in another file to avoid malicious usage.**
-
-
